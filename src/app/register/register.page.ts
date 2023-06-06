@@ -110,13 +110,32 @@ export class RegisterPage implements OnInit {
        
         // ...
       })
-      .catch((error) => {
+      .catch(async( error:any) => {
         loader.dismiss();
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+       
 
+
+        if(errorMessage=='Firebase: The email address is badly formatted. (auth/invalid-email).'){
+        const toast = await this.toastController.create({
+          message: "The email address is badly formatted",
+          duration: 2000,
+          position: 'top'
+        });
+        toast.present();
+        return;
+      }else if(errorMessage=="Firebase: The email address is already in use by another account. (auth/email-already-in-use)."){
+        const toast = await this.toastController.create({
+          message: "The email address is already in use by another account",
+          duration: 2000,
+          position: 'top'
+        });
+        toast.present();
+        return;
+    }
       });
+    
   }
     // Registration logic
     // You can handle the registration process here

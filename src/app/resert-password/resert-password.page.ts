@@ -26,11 +26,19 @@ export class ResertPasswordPage implements OnInit {
       this.router.navigateByUrl("/login");
       // ...
     })
-    .catch((error) => {
+    .catch((error:any) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      this.presentToast(errorMessage,"red");
+ 
       // ..
+
+      if(errorMessage=='Firebase: The email address is badly formatted. (auth/invalid-email).'){
+        this.presentToast("The email address is badly formatted",'danger');
+      }
+      else if(errorMessage=="Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found)."){
+        this.presentToast("There is no user record corresponding to this identifier",'danger');
+      }
+
     });
   }
 

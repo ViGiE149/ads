@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'wellcome',
     pathMatch: 'full'
   },
   {
@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'wellcome',
     loadChildren: () => import('./wellcome/wellcome.module').then( m => m.WellcomePageModule)
+  },  {
+    path: 'update-password',
+    loadChildren: () => import('./update-password/update-password.module').then( m => m.UpdatePasswordPageModule)
   },
+
 ];
 
 @NgModule({
