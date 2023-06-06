@@ -1,0 +1,68 @@
+ion-header {
+  ion-toolbar {
+    --background: #35465C; /* Dark blue */
+    --color: #FFFFFF; /* White */
+  }
+}
+
+ion-content {
+  .ion-padding {
+    --padding-top: 32px;
+    --padding-bottom: 32px;
+  }
+
+  form {
+    ion-item {
+      margin-bottom: 16px;
+      --highlight-color-focused: #6A75CA; /* Purple */
+      --highlight-color-invalid: #E74C3C; /* Red */
+      --highlight-color-valid: #2ECC71; /* Green */
+      --highlight-color-activated: #35465C; /* Dark blue */
+    }
+
+    ion-label {
+      font-weight: bold;
+      color: #35465C; /* Dark blue */
+    }
+
+    ion-input {
+      --border-color: #35465C; /* Dark blue */
+      --border-radius: 8px;
+    
+      --color: #35465C; /* Dark blue */
+
+      &:focus {
+        --border-color: #6A75CA; /* Purple */
+      }
+
+      &.ng-invalid {
+        --border-color: #E74C3C; /* Red */
+      }
+
+      &.ng-valid {
+        --border-color: #2ECC71; /* Green */
+      }
+    }
+  }
+
+  ion-button {
+    --background: #6A75CA; /* Purple */
+    --color: #FFFFFF; /* White */
+    --border-radius: 8px;
+    margin-top: 24px;
+  }
+
+  .register-link, .forgot-password-link {
+    text-align: center;
+    margin-top: 16px;
+
+    p {
+      color: #35465C; /* Dark blue */
+
+      a {
+        color: #6A75CA; /* Purple */
+        text-decoration: underline;
+      }
+    }
+  }
+}
